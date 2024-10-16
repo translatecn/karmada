@@ -213,7 +213,7 @@ util:wait_cluster_ready "${KARMADA_APISERVER_CLUSTER_NAME}" "${MEMBER_CLUSTER_2_
 util:wait_cluster_ready "${KARMADA_APISERVER_CLUSTER_NAME}" "${PULL_MODE_CLUSTER_NAME}"
 
 #step9. merge temporary kubeconfig of member clusters by kubectl
-export KUBECONFIG=$(find ${KUBECONFIG_PATH} -maxdepth 1 -type f | grep ${MEMBER_TMP_CONFIG_PREFIX} | tr '\n' ':')
+export KUBECONFIG=$(find ${KUBECONFIG_PATH}/ -maxdepth 1 -type f | grep ${MEMBER_TMP_CONFIG_PREFIX} | tr '\n' ':')
 kubectl config view --flatten > ${MEMBER_CLUSTER_KUBECONFIG}
 rm $(find ${KUBECONFIG_PATH}/ -maxdepth 1 -type f | grep ${MEMBER_TMP_CONFIG_PREFIX})
 

@@ -39,7 +39,7 @@ KARMADA_GO_PACKAGE="github.com/karmada-io/karmada"
 
 MIN_Go_VERSION=go1.22.7
 
-DEFAULT_CLUSTER_VERSION="kindest/node:v1.31.0"
+DEFAULT_CLUSTER_VERSION="registry.cn-hangzhou.aliyuncs.com/acejilam/node:v1.31.0"
 
 KARMADA_TARGET_SOURCE=(
   karmada-aggregated-apiserver=cmd/aggregated-apiserver
@@ -668,7 +668,7 @@ function util::add_routes() {
 MAC_NIC_IPADDRESS=''
 function util::get_macos_ipaddress() {
   if [[ $(go env GOOS) = "darwin" ]]; then
-    tmp_ip=$(ipconfig getifaddr en0 || true)
+    tmp_ip=$(ipconfig getifaddr en0 || ipconfig getifaddr en1 || true)
     echo ""
     echo " Detected that you are installing Karmada on macOS "
     echo ""
