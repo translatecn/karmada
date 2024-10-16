@@ -40,7 +40,7 @@ func TestEnsureAllControlPlaneComponents(t *testing.T) {
 		KubeControllerManager: &operatorv1alpha1.KubeControllerManager{
 			CommonSettings: operatorv1alpha1.CommonSettings{
 				Image: operatorv1alpha1.Image{
-					ImageRepository: "registry.k8s.io/kube-controller-manager",
+					ImageRepository: "registry.cn-hangzhou.aliyuncs.com/acejilam/kube-controller-manager",
 					ImageTag:        "latest",
 				},
 				Replicas:        ptr.To[int32](replicas),
@@ -130,7 +130,7 @@ func TestEnsureAllControlPlaneComponents(t *testing.T) {
 func TestGetKubeControllerManagerManifest(t *testing.T) {
 	var replicas int32 = 2
 	name, namespace := "karmada-demo", "test"
-	image, imageTag := "registry.k8s.io/kube-controller-manager", "latest"
+	image, imageTag := "registry.cn-hangzhou.aliyuncs.com/acejilam/kube-controller-manager", "latest"
 	imagePullPolicy := corev1.PullIfNotPresent
 	annotations := map[string]string{"annotationKey": "annotationValue"}
 	labels := map[string]string{"labelKey": "labelValue"}

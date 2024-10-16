@@ -199,7 +199,7 @@ func generateDeploymentYamlWithTwoContainer() *unstructured.Unstructured {
 								"name":  "nginx",
 							},
 							map[string]interface{}{
-								"image": "registry.k8s.io/nginx-slim:0.8",
+								"image": "registry.cn-hangzhou.aliyuncs.com/acejilam/nginx-slim:0.8",
 								"name":  "nginx",
 							}}}}}}}
 }
@@ -248,7 +248,7 @@ func TestParseJSONPatchesByImageOverrider(t *testing.T) {
 				{
 					Op:    string(policyv1alpha1.OverriderOpReplace),
 					Path:  "/spec/template/spec/containers/0/image",
-					Value: "registry.k8s.io/perl:5.34.0",
+					Value: "registry.cn-hangzhou.aliyuncs.com/acejilam/perl:5.34.0",
 				},
 			},
 			wantErr: false,
@@ -270,7 +270,7 @@ func TestParseJSONPatchesByImageOverrider(t *testing.T) {
 				{
 					Op:    string(policyv1alpha1.OverriderOpReplace),
 					Path:  "/spec/template/spec/containers/0/image",
-					Value: "registry.k8s.io/perl:5.34.0",
+					Value: "registry.cn-hangzhou.aliyuncs.com/acejilam/perl:5.34.0",
 				},
 			},
 			wantErr: false,
@@ -541,7 +541,7 @@ func TestParseJSONPatchesByImageOverrider(t *testing.T) {
 				{
 					Op:    string(policyv1alpha1.OverriderOpReplace),
 					Path:  "/spec/template/spec/containers/1/image",
-					Value: "registry.k8s.io/nginx:0.8",
+					Value: "registry.cn-hangzhou.aliyuncs.com/acejilam/nginx:0.8",
 				},
 			},
 			wantErr: false,
@@ -585,7 +585,7 @@ func TestParseJSONPatchesByImageOverrider(t *testing.T) {
 				{
 					Op:    string(policyv1alpha1.OverriderOpReplace),
 					Path:  "/spec/template/spec/containers/1/image",
-					Value: "registry.k8s.io/nginx:0.8",
+					Value: "registry.cn-hangzhou.aliyuncs.com/acejilam/nginx:0.8",
 				},
 			},
 			wantErr: false,

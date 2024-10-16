@@ -150,6 +150,7 @@ KARMADACTL_BIN="${GOPATH}/bin/karmadactl"
 echo "Waiting for the host clusters to be ready..."
 util::check_clusters_ready "${MAIN_KUBECONFIG}" "${HOST_CLUSTER_NAME}"
 
+export KARMADA_APISERVER_VERSION=v1.30.4
 #step4. load components images to kind cluster
 if [[ "${BUILD_FROM_SOURCE}" == "true" ]]; then
   kind load docker-image "${REGISTRY}/karmada-controller-manager:${VERSION}" --name="${HOST_CLUSTER_NAME}"
@@ -160,6 +161,10 @@ if [[ "${BUILD_FROM_SOURCE}" == "true" ]]; then
   kind load docker-image "${REGISTRY}/karmada-aggregated-apiserver:${VERSION}" --name="${HOST_CLUSTER_NAME}"
   kind load docker-image "${REGISTRY}/karmada-search:${VERSION}" --name="${HOST_CLUSTER_NAME}"
   kind load docker-image "${REGISTRY}/karmada-metrics-adapter:${VERSION}" --name="${HOST_CLUSTER_NAME}"
+  docker pull registry.cn-hangzhou.aliyuncs.com/acejilam/etcd:3.5.13-0
+  docker pull registry.cn-hangzhou.aliyuncs.com/acejilam/kube-apiserver:${KARMADA_APISERVER_VERSION}
+  kind load docker-image registry.cn-hangzhou.aliyuncs.com/acejilam/etcd:3.5.13-0 --name="${HOST_CLUSTER_NAME}"
+  kind load docker-image "registry.cn-hangzhou.aliyuncs.com/acejilam/kube-apiserver:${KARMADA_APISERVER_VERSION}" --name="${HOST_CLUSTER_NAME}"
 fi
 
 #step5. install karmada control plane components
@@ -210,7 +215,7 @@ util:wait_cluster_ready "${KARMADA_APISERVER_CLUSTER_NAME}" "${PULL_MODE_CLUSTER
 #step9. merge temporary kubeconfig of member clusters by kubectl
 export KUBECONFIG=$(find ${KUBECONFIG_PATH} -maxdepth 1 -type f | grep ${MEMBER_TMP_CONFIG_PREFIX} | tr '\n' ':')
 kubectl config view --flatten > ${MEMBER_CLUSTER_KUBECONFIG}
-rm $(find ${KUBECONFIG_PATH} -maxdepth 1 -type f | grep ${MEMBER_TMP_CONFIG_PREFIX})
+rm $(find ${KUBECONFIG_PATH}/ -maxdepth 1 -type f | grep ${MEMBER_TMP_CONFIG_PREFIX})
 
 function print_success() {
   echo -e "$KARMADA_GREETING"

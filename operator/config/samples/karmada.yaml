@@ -7,7 +7,7 @@ spec:
   components:
     etcd:
       local:
-        imageRepository: registry.k8s.io/etcd
+        imageRepository: registry.cn-hangzhou.aliyuncs.com/acejilam/etcd
         imageTag: 3.5.13-0
         replicas: 1
         volumeData:
@@ -24,7 +24,7 @@ spec:
                 requests:
                   storage: 3Gi
     karmadaAPIServer:
-      imageRepository: registry.k8s.io/kube-apiserver
+      imageRepository: registry.cn-hangzhou.aliyuncs.com/acejilam/kube-apiserver
       imageTag: v1.30.4
       replicas: 1
       serviceType: NodePort
@@ -46,7 +46,7 @@ spec:
       imageTag: v1.8.0
       replicas: 1
     kubeControllerManager:
-      imageRepository: registry.k8s.io/kube-controller-manager
+      imageRepository: registry.cn-hangzhou.aliyuncs.com/acejilam/kube-controller-manager
       imageTag: v1.30.4
       replicas: 1
     karmadaMetricsAdapter:

@@ -12,13 +12,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FROM alpine:3.20.3
+FROM registry.cn-hangzhou.aliyuncs.com/acejilam/alpine:3.20.3
 
-ARG BINARY
-ARG TARGETPLATFORM
 
 RUN apk add --no-cache ca-certificates
 #tzdata is used to parse the time zone information when using CronFederatedHPA
 RUN apk add --no-cache tzdata
+
+ARG BINARY
+ARG TARGETPLATFORM
 
 COPY ${TARGETPLATFORM}/${BINARY} /bin/${BINARY}

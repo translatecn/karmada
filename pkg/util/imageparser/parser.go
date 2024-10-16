@@ -178,7 +178,7 @@ func Parse(image string) (*Components, error) {
 	return comp, nil
 }
 
-// SplitHostname splits a repository name(ie: registry.k8s.io/kube-apiserver) to hostname(registry.k8s.io) and remotename(kube-apiserver) string.
+// SplitHostname splits a repository name(ie: registry.cn-hangzhou.aliyuncs.com/acejilam/kube-apiserver) to hostname(registry.k8s.io) and remotename(kube-apiserver) string.
 func SplitHostname(name string) (hostname, remoteName string) {
 	i := strings.IndexRune(name, '/')
 	if i == -1 || (!strings.ContainsAny(name[:i], ".:") && name[:i] != "localhost") {

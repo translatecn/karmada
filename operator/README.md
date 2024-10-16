@@ -197,7 +197,7 @@ metadata:
 spec:
   components:
     karmadaAPIServer:
-      labels: 
+      labels:
         <custom-label-key>: <custom-label-value>
       annotations:
         <custom-annotation-key>: <custom-annotation-value>
@@ -211,7 +211,7 @@ You can change it to `NodePort`:
 ```yaml
 ...
 karmadaAPIServer:
-  imageRepository: registry.k8s.io/kube-apiserver
+  imageRepository: registry.cn-hangzhou.aliyuncs.com/acejilam/kube-apiserver
   imageTag: v1.30.4
   replicas: 1
   serviceType: NodePort
@@ -226,7 +226,7 @@ You can add more SANs to karmada-apiserver certificate:
 ```yaml
 ...
 karmadaAPIServer:
-  imageRepository: registry.k8s.io/kube-apiserver
+  imageRepository: registry.cn-hangzhou.aliyuncs.com/acejilam/kube-apiserver
   imageTag: v1.30.4
   replicas: 1
   serviceSubnet: 10.96.0.0/12
