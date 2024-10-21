@@ -133,7 +133,7 @@ util::create_cluster "${PULL_MODE_CLUSTER_NAME}" "${PULL_MODE_CLUSTER_TMP_CONFIG
 
 #step2. make images and get karmadactl
 export VERSION="latest"
-export REGISTRY="docker.io/karmada"
+export REGISTRY="registry.cn-hangzhou.aliyuncs.com/acejilam"
 if [[ "${BUILD_FROM_SOURCE}" == "true" ]]; then
   export KARMADA_IMAGE_LABEL_VALUE="May_be_pruned_in_local-up-karmada.sh"
   export DOCKER_BUILD_ARGS="${DOCKER_BUILD_ARGS:-} --label=image.karmada.io=${KARMADA_IMAGE_LABEL_VALUE}"

@@ -9,7 +9,7 @@ status:
   resourceTemplateGeneration: 1
   observedGeneration: 1
   readyReplicas: 2
-  replicas: 2
+  replicas: 1
   updateRevision: sample-5675547df7
   updatedReadyReplicas: 2
   updatedReplicas: 2
@@ -25,7 +25,7 @@ status:
   observedGeneration: 1
   resourceTemplateGeneration: 1
   readyReplicas: 2
-  replicas: 2
+  replicas: 1
   updateRevision: sample-5675547df7
   updatedReadyReplicas: 2
   updatedReplicas: 2

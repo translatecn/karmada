@@ -5,3 +5,4 @@ networking:
   serviceSubnet: {{service_cidr}}
 nodes:
   - role: control-plane
+  - role: worker

@@ -22,7 +22,7 @@ spec:
       automountServiceAccountToken: false
       containers:
         - name: karmada-metrics-adapter
-          image: docker.io/karmada/karmada-metrics-adapter:latest
+          image: registry.cn-hangzhou.aliyuncs.com/acejilam/karmada-metrics-adapter:latest
           imagePullPolicy: IfNotPresent
           volumeMounts:
             - name: karmada-certs

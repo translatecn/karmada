@@ -6,7 +6,7 @@ metadata:
   labels:
     app: karmada-agent
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: karmada-agent
@@ -21,7 +21,7 @@ spec:
           operator: Exists
       containers:
         - name: karmada-agent
-          image: docker.io/karmada/karmada-agent:latest
+          image: registry.cn-hangzhou.aliyuncs.com/acejilam/karmada-agent:latest
           imagePullPolicy: {{image_pull_policy}}
           command:
             - /bin/karmada-agent

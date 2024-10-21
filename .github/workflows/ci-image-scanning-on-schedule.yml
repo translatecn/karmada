@@ -44,12 +44,12 @@ jobs:
       - name: Build images from Dockerfile
         run: |
           export VERSION=${{ matrix.karmada-version }}
-          export REGISTRY="docker.io/karmada"
+          export REGISTRY="registry.cn-hangzhou.aliyuncs.com/acejilam"
           make image-${{ matrix.target }}
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@0.27.0
         with:
-          image-ref: 'docker.io/karmada/${{ matrix.target }}:${{ matrix.karmada-version }}'
+          image-ref: 'registry.cn-hangzhou.aliyuncs.com/acejilam/${{ matrix.target }}:${{ matrix.karmada-version }}'
           format: 'sarif'
           ignore-unfixed: true
           vuln-type: 'os,library'
@@ -57,7 +57,7 @@ jobs:
       - name: display scan results
         uses: aquasecurity/trivy-action@0.27.0
         with:
-          image-ref: 'docker.io/karmada/${{ matrix.target }}:${{ matrix.karmada-version }}'
+          image-ref: 'registry.cn-hangzhou.aliyuncs.com/acejilam/${{ matrix.target }}:${{ matrix.karmada-version }}'
           format: 'table'
           ignore-unfixed: true
           vuln-type: 'os,library'

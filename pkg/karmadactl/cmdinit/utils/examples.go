@@ -85,7 +85,7 @@ spec:
           operator: Exists
       containers:
         - name: karmada-agent
-          image: docker.io/karmada/karmada-agent:latest
+          image: registry.cn-hangzhou.aliyuncs.com/acejilam/karmada-agent:latest
           command:
             - /bin/karmada-agent
             - --karmada-kubeconfig=/etc/kubeconfig/karmada-kubeconfig
@@ -134,7 +134,7 @@ spec:
           operator: Exists
       containers:
         - name: karmada-scheduler-estimator
-          image: docker.io/karmada/karmada-scheduler-estimator:latest
+          image: registry.cn-hangzhou.aliyuncs.com/acejilam/karmada-scheduler-estimator:latest
           imagePullPolicy: IfNotPresent
           command:
             - /bin/karmada-scheduler-estimator

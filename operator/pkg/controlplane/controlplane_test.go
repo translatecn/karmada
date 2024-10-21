@@ -54,7 +54,7 @@ func TestEnsureAllControlPlaneComponents(t *testing.T) {
 		KarmadaControllerManager: &operatorv1alpha1.KarmadaControllerManager{
 			CommonSettings: operatorv1alpha1.CommonSettings{
 				Image: operatorv1alpha1.Image{
-					ImageRepository: "docker.io/karmada/karmada-controller-manager",
+					ImageRepository: "registry.cn-hangzhou.aliyuncs.com/acejilam/karmada-controller-manager",
 					ImageTag:        "latest",
 				},
 				Replicas:        ptr.To[int32](replicas),
@@ -67,7 +67,7 @@ func TestEnsureAllControlPlaneComponents(t *testing.T) {
 		KarmadaScheduler: &operatorv1alpha1.KarmadaScheduler{
 			CommonSettings: operatorv1alpha1.CommonSettings{
 				Image: operatorv1alpha1.Image{
-					ImageRepository: "docker.io/karmada/karmada-scheduler",
+					ImageRepository: "registry.cn-hangzhou.aliyuncs.com/acejilam/karmada-scheduler",
 					ImageTag:        "latest",
 				},
 				Replicas:        ptr.To[int32](replicas),
@@ -81,7 +81,7 @@ func TestEnsureAllControlPlaneComponents(t *testing.T) {
 		KarmadaDescheduler: &operatorv1alpha1.KarmadaDescheduler{
 			CommonSettings: operatorv1alpha1.CommonSettings{
 				Image: operatorv1alpha1.Image{
-					ImageRepository: "docker.io/karmada/karmada-descheduler",
+					ImageRepository: "registry.cn-hangzhou.aliyuncs.com/acejilam/karmada-descheduler",
 					ImageTag:        "latest",
 				},
 				Replicas:        ptr.To[int32](replicas),
@@ -177,7 +177,7 @@ func TestGetKubeControllerManagerManifest(t *testing.T) {
 func TestGetKarmadaControllerManagerManifest(t *testing.T) {
 	var replicas int32 = 2
 	name, namespace := "karmada-demo", "test"
-	image, imageTag := "docker.io/karmada/karmada-controller-manager", "latest"
+	image, imageTag := "registry.cn-hangzhou.aliyuncs.com/acejilam/karmada-controller-manager", "latest"
 	imagePullPolicy := corev1.PullIfNotPresent
 	annotations := map[string]string{"annotationKey": "annotationValue"}
 	labels := map[string]string{"labelKey": "labelValue"}
@@ -232,7 +232,7 @@ func TestGetKarmadaControllerManagerManifest(t *testing.T) {
 func TestGetKarmadaSchedulerManifest(t *testing.T) {
 	var replicas int32 = 2
 	name, namespace := "karmada-demo", "test"
-	image, imageTag := "docker.io/karmada/karmada-scheduler", "latest"
+	image, imageTag := "registry.cn-hangzhou.aliyuncs.com/acejilam/karmada-scheduler", "latest"
 	imagePullPolicy := corev1.PullIfNotPresent
 	annotations := map[string]string{"annotationKey": "annotationValue"}
 	labels := map[string]string{"labelKey": "labelValue"}
@@ -291,7 +291,7 @@ func TestGetKarmadaSchedulerManifest(t *testing.T) {
 func TestGetKarmadaDeschedulerManifest(t *testing.T) {
 	var replicas int32 = 2
 	name, namespace := "karmada-demo", "test"
-	image, imageTag := "docker.io/karmada/karmada-descheduler", "latest"
+	image, imageTag := "registry.cn-hangzhou.aliyuncs.com/acejilam/karmada-descheduler", "latest"
 	imagePullPolicy := corev1.PullIfNotPresent
 	annotations := map[string]string{"annotationKey": "annotationValue"}
 	labels := map[string]string{"labelKey": "labelValue"}

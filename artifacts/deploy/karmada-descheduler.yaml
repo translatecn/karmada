@@ -6,7 +6,7 @@ metadata:
   labels:
     app: karmada-descheduler
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: karmada-descheduler
@@ -21,7 +21,7 @@ spec:
           operator: Exists
       containers:
         - name: karmada-descheduler
-          image: docker.io/karmada/karmada-descheduler:latest
+          image: registry.cn-hangzhou.aliyuncs.com/acejilam/karmada-descheduler:latest
           imagePullPolicy: IfNotPresent
           command:
             - /bin/karmada-descheduler

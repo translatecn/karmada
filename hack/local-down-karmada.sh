@@ -66,7 +66,7 @@ echo "Remove kubeconfig successfully."
 #step3. remove docker images
 echo -e "\nStart removing images"
 version="latest"
-registry="docker.io/karmada"
+registry="registry.cn-hangzhou.aliyuncs.com/acejilam"
 images=(
 "${registry}/karmada-controller-manager:${version}"
 "${registry}/karmada-scheduler:${version}"

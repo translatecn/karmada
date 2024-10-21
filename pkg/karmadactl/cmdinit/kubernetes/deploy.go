@@ -115,10 +115,10 @@ func init() {
 
 	DefaultCrdURL = fmt.Sprintf("https://github.com/karmada-io/karmada/releases/download/%s/crds.tar.gz", releaseVer.ReleaseVersion())
 	DefaultInitImage = "docker.io/alpine:3.19.1"
-	DefaultKarmadaSchedulerImage = fmt.Sprintf("docker.io/karmada/karmada-scheduler:%s", releaseVer.ReleaseVersion())
-	DefaultKarmadaControllerManagerImage = fmt.Sprintf("docker.io/karmada/karmada-controller-manager:%s", releaseVer.ReleaseVersion())
-	DefaultKarmadaWebhookImage = fmt.Sprintf("docker.io/karmada/karmada-webhook:%s", releaseVer.ReleaseVersion())
-	DefaultKarmadaAggregatedAPIServerImage = fmt.Sprintf("docker.io/karmada/karmada-aggregated-apiserver:%s", releaseVer.ReleaseVersion())
+	DefaultKarmadaSchedulerImage = fmt.Sprintf("registry.cn-hangzhou.aliyuncs.com/acejilam/karmada-scheduler:%s", releaseVer.ReleaseVersion())
+	DefaultKarmadaControllerManagerImage = fmt.Sprintf("registry.cn-hangzhou.aliyuncs.com/acejilam/karmada-controller-manager:%s", releaseVer.ReleaseVersion())
+	DefaultKarmadaWebhookImage = fmt.Sprintf("registry.cn-hangzhou.aliyuncs.com/acejilam/karmada-webhook:%s", releaseVer.ReleaseVersion())
+	DefaultKarmadaAggregatedAPIServerImage = fmt.Sprintf("registry.cn-hangzhou.aliyuncs.com/acejilam/karmada-aggregated-apiserver:%s", releaseVer.ReleaseVersion())
 }
 
 // CommandInitOption holds all flags options for init.

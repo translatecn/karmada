@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: karmada-operator
-        image: docker.io/karmada/karmada-operator:latest
+        image: registry.cn-hangzhou.aliyuncs.com/acejilam/karmada-operator:latest
         imagePullPolicy: IfNotPresent
         command:
         - /bin/karmada-operator

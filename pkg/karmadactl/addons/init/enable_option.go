@@ -87,10 +87,10 @@ func init() {
 	}
 	karmadaRelease = releaseVer.ReleaseVersion()
 
-	DefaultKarmadaDeschedulerImage = fmt.Sprintf("docker.io/karmada/karmada-descheduler:%s", releaseVer.ReleaseVersion())
-	DefaultKarmadaSchedulerEstimatorImage = fmt.Sprintf("docker.io/karmada/karmada-scheduler-estimator:%s", releaseVer.ReleaseVersion())
-	DefaultKarmadaSearchImage = fmt.Sprintf("docker.io/karmada/karmada-search:%s", releaseVer.ReleaseVersion())
-	DefaultKarmadaMetricsAdapterImage = fmt.Sprintf("docker.io/karmada/karmada-metrics-adapter:%s", releaseVer.ReleaseVersion())
+	DefaultKarmadaDeschedulerImage = fmt.Sprintf("registry.cn-hangzhou.aliyuncs.com/acejilam/karmada-descheduler:%s", releaseVer.ReleaseVersion())
+	DefaultKarmadaSchedulerEstimatorImage = fmt.Sprintf("registry.cn-hangzhou.aliyuncs.com/acejilam/karmada-scheduler-estimator:%s", releaseVer.ReleaseVersion())
+	DefaultKarmadaSearchImage = fmt.Sprintf("registry.cn-hangzhou.aliyuncs.com/acejilam/karmada-search:%s", releaseVer.ReleaseVersion())
+	DefaultKarmadaMetricsAdapterImage = fmt.Sprintf("registry.cn-hangzhou.aliyuncs.com/acejilam/karmada-metrics-adapter:%s", releaseVer.ReleaseVersion())
 }
 
 // KarmadaDeschedulerImage get karmada descheduler image

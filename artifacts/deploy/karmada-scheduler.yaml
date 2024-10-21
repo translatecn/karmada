@@ -6,7 +6,7 @@ metadata:
   labels:
     app: karmada-scheduler
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: karmada-scheduler
@@ -21,7 +21,7 @@ spec:
           operator: Exists
       containers:
         - name: karmada-scheduler
-          image: docker.io/karmada/karmada-scheduler:latest
+          image: registry.cn-hangzhou.aliyuncs.com/acejilam/karmada-scheduler:latest
           imagePullPolicy: IfNotPresent
           livenessProbe:
             httpGet:

@@ -27,5 +27,5 @@ status:
   availableReplicas: 2
   observedGeneration: 1
   readyReplicas: 2
-  replicas: 2
+  replicas: 1
   updatedReplicas: 2

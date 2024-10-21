@@ -30,19 +30,19 @@ spec:
       serviceType: NodePort
       serviceSubnet: 10.96.0.0/12
     karmadaAggregatedAPIServer:
-      imageRepository: docker.io/karmada/karmada-aggregated-apiserver
+      imageRepository: registry.cn-hangzhou.aliyuncs.com/acejilam/karmada-aggregated-apiserver
       imageTag: v1.8.0
       replicas: 1
     karmadaControllerManager:
-      imageRepository: docker.io/karmada/karmada-controller-manager
+      imageRepository: registry.cn-hangzhou.aliyuncs.com/acejilam/karmada-controller-manager
       imageTag: v1.8.0
       replicas: 1
     karmadaScheduler:
-      imageRepository: docker.io/karmada/karmada-scheduler
+      imageRepository: registry.cn-hangzhou.aliyuncs.com/acejilam/karmada-scheduler
       imageTag: v1.8.0
       replicas: 1
     karmadaWebhook:
-      imageRepository: docker.io/karmada/karmada-webhook
+      imageRepository: registry.cn-hangzhou.aliyuncs.com/acejilam/karmada-webhook
       imageTag: v1.8.0
       replicas: 1
     kubeControllerManager:
@@ -50,15 +50,15 @@ spec:
       imageTag: v1.30.4
       replicas: 1
     karmadaMetricsAdapter:
-      imageRepository: docker.io/karmada/karmada-metrics-adapter
+      imageRepository: registry.cn-hangzhou.aliyuncs.com/acejilam/karmada-metrics-adapter
       imageTag: v1.8.0
-      replicas: 2
+      replicas: 1
     # karmadaSearch: # the component `Karmadasearch` is not installed by default, if you need to install it, uncomment it and note the formatting
-      # imageRepository: docker.io/karmada/karmada-search
+      # imageRepository: registry.cn-hangzhou.aliyuncs.com/acejilam/karmada-search
       # imageTag: v1.8.0
       # replicas: 1
     # karmadaDescheduler: # the component `KarmadaDescheduler` is not installed by default, if you need to install it, uncomment it and note the formatting
-      # imageRepository: docker.io/karmada/karmada-descheduler
+      # imageRepository: registry.cn-hangzhou.aliyuncs.com/acejilam/karmada-descheduler
       # imageTag: v1.8.0
       # replicas: 1
   hostCluster:

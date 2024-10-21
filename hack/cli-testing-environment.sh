@@ -65,7 +65,7 @@ cd -
 
 # make images
 export VERSION="latest"
-export REGISTRY="docker.io/karmada"
+export REGISTRY="registry.cn-hangzhou.aliyuncs.com/acejilam"
 make images GOOS="linux" --directory="${REPO_ROOT}"
 
 # make karmadactl binary

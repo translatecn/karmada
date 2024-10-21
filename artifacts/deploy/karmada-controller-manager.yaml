@@ -6,7 +6,7 @@ metadata:
   labels:
     app: karmada-controller-manager
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: karmada-controller-manager
@@ -21,7 +21,7 @@ spec:
         operator: Exists
       containers:
         - name: karmada-controller-manager
-          image: docker.io/karmada/karmada-controller-manager:latest
+          image: registry.cn-hangzhou.aliyuncs.com/acejilam/karmada-controller-manager:latest
           imagePullPolicy: IfNotPresent
           command:
             - /bin/karmada-controller-manager

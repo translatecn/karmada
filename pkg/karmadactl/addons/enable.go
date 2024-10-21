@@ -48,7 +48,7 @@ var (
 	%[1]s enable karmada-search --karmada-kubeconfig /etc/karmada/karmada-apiserver.config
 
 	# Specify the karmada-search image
-	%[1]s enable karmada-search --karmada-search-image docker.io/karmada/karmada-search:latest
+	%[1]s enable karmada-search --karmada-search-image registry.cn-hangzhou.aliyuncs.com/acejilam/karmada-search:latest
 
 	# Specify the namespace where Karmada components are installed
 	%[1]s enable karmada-search --namespace karmada-system

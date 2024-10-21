@@ -650,18 +650,18 @@ function util::get_load_balancer_ip() {
 #  - $2: the kubeconfig path of the cluster wanted to be connected
 #  - $3: the context in kubeconfig of the cluster wanted to be connected
 function util::add_routes() {
-  unset IFS
-  routes=$(kubectl --kubeconfig ${2} --context ${3} get nodes -o jsonpath='{range .items[*]}ip route add {.spec.podCIDR} via {.status.addresses[?(.type=="InternalIP")].address}{"\n"}{end}')
-  echo "Connecting cluster ${1} to ${2}"
-
-  IFS=$'\n'
-  for n in $(kind get nodes --name "${1}"); do
-    for r in $routes; do
-      echo "exec cmd in docker $n $r"
-      eval "docker exec $n $r"
-    done
-  done
-  unset IFS
+#  unset IFS
+#  routes=$(kubectl --kubeconfig ${2} --context ${3} get nodes -o jsonpath='{range .items[*]}ip route add {.spec.podCIDR} via {.status.addresses[?(.type=="InternalIP")].address}{"\n"}{end}')
+#  echo "Connecting cluster ${1} to ${2}"
+#
+#  IFS=$'\n'
+#  for n in $(kind get nodes --name "${1}"); do
+#    for r in $routes; do
+#      echo "exec cmd in docker $n $r"
+#      eval "docker exec $n $r"
+#    done
+#  done
+#  unset IFS
 }
 
 # util::get_macos_ipaddress will get ip address on macos interactively, store to 'MAC_NIC_IPADDRESS' if available

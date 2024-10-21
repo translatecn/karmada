@@ -27,14 +27,14 @@ function usage() {
     echo "    hack/scan-image-vuln.sh [-i imageRef] [-r registry] [-v version] [-s skip-image-generation] [-f format][-h]"
     echo "Examples:"
     echo "    # starts a images scanning with specific image provided"
-    echo "    hack/scan-image-vuln.sh -i docker.io/karmada/karmada-controller-manager:v1.8.0"
-    echo "    # scan Karmada component images with trivy and images will be automatically generated, imageRef='docker.io/karmada/{imageName}:latest'"
+    echo "    hack/scan-image-vuln.sh -i registry.cn-hangzhou.aliyuncs.com/acejilam/karmada-controller-manager:v1.8.0"
+    echo "    # scan Karmada component images with trivy and images will be automatically generated, imageRef='registry.cn-hangzhou.aliyuncs.com/acejilam/{imageName}:latest'"
     echo "    hack/scan-image-vuln.sh"
-    echo "    # scan Karmada component images with trivy and images generation will be skipped, imageRef='docker.io/karmada/{imageName}:latest'"
+    echo "    # scan Karmada component images with trivy and images generation will be skipped, imageRef='registry.cn-hangzhou.aliyuncs.com/acejilam/{imageName}:latest'"
     echo "    hack/scan-image-vuln.sh -s"
     echo "    # scan Karmada component images with trivy and provide specific image's registry or version"
     echo "    hack/scan-image-vuln.sh -r foo # imageRef='foo/{imageName}:latest'"
-    echo "    hack/scan-image-vuln.sh -s -v v1.8.0 # imageRef='docker.io/karmada/{imageName}:v1.8.0'"
+    echo "    hack/scan-image-vuln.sh -s -v v1.8.0 # imageRef='registry.cn-hangzhou.aliyuncs.com/acejilam/{imageName}:v1.8.0'"
     echo "Args:"
     echo "    i imageRef: starts a images scanning with specific image provided, if not provided, local Karmada images will be scanned"
     echo "    r registry: registry of images"
@@ -90,7 +90,7 @@ fi
 REPO_ROOT=$(dirname "${BASH_SOURCE[0]}")/..
 cd "${REPO_ROOT}"
 export VERSION=${VERSION:-"latest"}
-export REGISTRY=${REGISTRY:-"docker.io/karmada"}
+export REGISTRY=${REGISTRY:-"registry.cn-hangzhou.aliyuncs.com/acejilam"}
 IMAGE_ARRAR=(
 	karmada-controller-manager
   karmada-scheduler

@@ -5,3 +5,4 @@ networking:
   serviceSubnet: "10.15.0.0/16"
 nodes:
   - role: control-plane
+  - role: worker

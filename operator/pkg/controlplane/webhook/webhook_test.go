@@ -29,7 +29,7 @@ import (
 
 func TestEnsureKarmadaWebhook(t *testing.T) {
 	var replicas int32 = 2
-	image, imageTag := "docker.io/karmada/karmada-webhook", "latest"
+	image, imageTag := "registry.cn-hangzhou.aliyuncs.com/acejilam/karmada-webhook", "latest"
 	name := "karmada-demo"
 	namespace := "test"
 	imagePullPolicy := corev1.PullIfNotPresent
@@ -68,7 +68,7 @@ func TestEnsureKarmadaWebhook(t *testing.T) {
 
 func TestInstallKarmadaWebhook(t *testing.T) {
 	var replicas int32 = 2
-	image, imageTag := "docker.io/karmada/karmada-webhook", "latest"
+	image, imageTag := "registry.cn-hangzhou.aliyuncs.com/acejilam/karmada-webhook", "latest"
 	name := "karmada-demo"
 	namespace := "test"
 	imagePullPolicy := corev1.PullIfNotPresent

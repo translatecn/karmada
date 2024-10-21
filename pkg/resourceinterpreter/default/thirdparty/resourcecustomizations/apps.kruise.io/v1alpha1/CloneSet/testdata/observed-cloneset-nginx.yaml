@@ -9,7 +9,7 @@ metadata:
   namespace: test-cloneset
   generation: 1
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: sample
@@ -46,7 +46,7 @@ status:
   labelSelector: app=sample,test=cloneset
   observedGeneration: 1
   readyReplicas: 2
-  replicas: 2
+  replicas: 1
   updateRevision: sample-59df6bd888
   updatedReadyReplicas: 2
   updatedReplicas: 2

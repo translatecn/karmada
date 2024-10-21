@@ -6,7 +6,7 @@ metadata:
   labels:
     cluster: {{member_cluster_name}}
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: karmada-scheduler-estimator-{{member_cluster_name}}
@@ -21,7 +21,7 @@ spec:
           operator: Exists
       containers:
         - name: karmada-scheduler-estimator
-          image: docker.io/karmada/karmada-scheduler-estimator:latest
+          image: registry.cn-hangzhou.aliyuncs.com/acejilam/karmada-scheduler-estimator:latest
           imagePullPolicy: IfNotPresent
           command:
             - /bin/karmada-scheduler-estimator

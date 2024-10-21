@@ -3,7 +3,7 @@ GOARCH ?= $(shell go env GOARCH)
 VERSION ?= '$(shell hack/version.sh)'
 
 # Images management
-REGISTRY?="docker.io/karmada"
+REGISTRY?="registry.cn-hangzhou.aliyuncs.com/acejilam"
 REGISTRY_USER_NAME?=""
 REGISTRY_PASSWORD?=""
 REGISTRY_SERVER_ADDRESS?=""
@@ -99,8 +99,8 @@ package-chart:
 
 .PHONY: push-chart
 push-chart:
-	helm push _output/charts/karmada-chart-${VERSION}.tgz oci://docker.io/karmada
-	helm push _output/charts/karmada-operator-chart-${VERSION}.tgz oci://docker.io/karmada
+	helm push _output/charts/karmada-chart-${VERSION}.tgz oci://registry.cn-hangzhou.aliyuncs.com/acejilam
+	helm push _output/charts/karmada-operator-chart-${VERSION}.tgz oci://registry.cn-hangzhou.aliyuncs.com/acejilam
 
 GOTESTSUM_REGISTRY:=gotest.tools/gotestsum
 GOTESTSUM_VERSION:=ec99a250836f069a524bb9d9b5de0a7a96334ea7 # v1.11.0

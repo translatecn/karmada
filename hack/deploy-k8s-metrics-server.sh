@@ -53,7 +53,8 @@ fi
 MEMBER_CLUSTER_NAME=$2
 
 # get deploy yaml
-wget https://github.com/kubernetes-sigs/metrics-server/releases/download/v0.6.3/components.yaml -O "${_tmp}/components.yaml"
+#wget https://github.com/kubernetes-sigs/metrics-server/releases/download/v0.6.3/components.yaml -O "${_tmp}/components.yaml"
+cp -rf ./hack/metrics-server.yaml ${_tmp}/components.yaml
 sed -i'' -e 's/args:/args:\n        - --kubelet-insecure-tls=true/' "${_tmp}/components.yaml"
 
 # deploy metrics-server in member cluster

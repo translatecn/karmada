@@ -27,7 +27,7 @@ const (
 	// KubeDefaultRepository defines the default of the k8s image repository
 	KubeDefaultRepository = "registry.k8s.io"
 	// KarmadaDefaultRepository defines the default of the karmada image repository
-	KarmadaDefaultRepository = "docker.io/karmada"
+	KarmadaDefaultRepository = "registry.cn-hangzhou.aliyuncs.com/acejilam"
 	// EtcdDefaultVersion defines the default of the karmada etcd image tag
 	EtcdDefaultVersion = "3.5.13-0"
 	// KubeDefaultVersion defines the default of the karmada apiserver and kubeControllerManager image tag
